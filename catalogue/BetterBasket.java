@@ -15,6 +15,7 @@ public class BetterBasket extends Basket implements Serializable
   
   public int newPro = 0;
   
+  
 
   // You need to add code here
   // merge the items for same product,
