@@ -6,7 +6,7 @@ package dbAccess;
  * @author  Mike Smith University of Brighton
  * @version 2.0
  */
-
+import java.sql.*;
 import catalogue.Product;
 import debug.DEBUG;
 import middle.StockException;
