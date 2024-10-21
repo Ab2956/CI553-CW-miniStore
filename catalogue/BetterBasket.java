@@ -8,46 +8,62 @@ import java.util.List;
 /**
  * Write a description of class BetterBasket here.
  * 
- * @author  Your Name 
+ * @author  Adam Brows 
  * @version 1.0
  */
-public class BetterBasket extends Basket implements Serializable
+public class BetterBasket extends Basket implements Serializable, Comparable<BetterBasket>
 {
   private static final long serialVersionUID = 1L;
 
   public BetterBasket() { 
+	  super();
+	  sortList();
   } 
-
-  List<Basket> productList; 
-  
-  
+ 
   public void sortList() {
-	  
-	  Collections.sort(this, new Comparator<Product>(){
-		  
-		  
-		  public int compare(Product pr1, Product pr2) {
-			  return pr1.getProductNum().compareToIgnoreCase(pr2.getProductNum());
-		  }
-	  });
-  }
-  
-  
-  
-}
-// public void sortProNum(Comparator<Product> comparator) {
-//	 
-//	 Collections.sort(this, Comparator<Product>()){
-//		 @Override
-//		 public int compareTo(Product p1, Product p2) {
-//			 return.p1.getProductNum().compareToIgnoreCase(p2.getProductNum());
-//		 } 
-//	 }
-// }
- 
- 
+	    Collections.sort(this, Comparator.comparing(Product::getProductNum, String::compareToIgnoreCase));
+	}
 
+  @Override
+  public int compareTo(BetterBasket o) {
+	  double thisTotalPrice = this.getTotalPrice();
+	  double comTotalPrice = o.getTotalPrice();
+	  
+	  return Double.compare(thisTotalPrice, comTotalPrice);
+  		}
+
+  public double getTotalPrice() {
+	
+	return  this.stream().map(product -> product.getPrice() * product.getQuantity()).count();
+  	}
+  public boolean add(Product product) {
+      boolean added = super.add(product);  // Call the super method to add the product
+      sortList();  // Sort the basket after adding a new product
+      return added;  // Return the result of the addition
+  }
    
+} 
+//  public String getDetails() {
+//	  sortList();
+//	  return super.getDetails();
+//  }
+  
+
+  
+  
+  //  public void sortList() {
+//	  
+//	  Collections.sort(this, new Comparator<Product>(){
+//		  
+//		  public int compare(Product pr1, Product pr2) {
+//			  return pr1.getProductNum().compareToIgnoreCase(pr2.getProductNum());
+//		  }
+//	  });
+//  }
+  
+  
+
+
 
 //  public int compareTo(Product o) { 
 //
