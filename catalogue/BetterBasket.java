@@ -3,7 +3,7 @@ package catalogue;
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
+
 
 /**
  * Write a description of class BetterBasket here.
@@ -11,6 +11,7 @@ import java.util.List;
  * @author  Adam Brows 
  * @version 1.0
  */
+
 public class BetterBasket extends Basket implements Serializable, Comparable<BetterBasket>
 {
   private static final long serialVersionUID = 1L;
@@ -19,8 +20,14 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
   public BetterBasket() { 
 	  super();
 	  sortList();
-	  mergePro();
+	 
   } 
+  
+  public String getDetails() {
+	  mergePro();
+	  System.out.print("merged");
+	  return super.getDetails();
+  }
  
   public void sortList() {
 	    Collections.sort(this, Comparator.comparing(Product::getProductNum, String::compareToIgnoreCase));
