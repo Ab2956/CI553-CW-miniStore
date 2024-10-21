@@ -14,11 +14,12 @@ import java.util.List;
 public class BetterBasket extends Basket implements Serializable, Comparable<BetterBasket>
 {
   private static final long serialVersionUID = 1L;
-
- 
+  
+  
   public BetterBasket() { 
 	  super();
 	  sortList();
+	  mergePro();
   } 
  
   public void sortList() {
@@ -43,7 +44,7 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 	  for(int i = 0; i < this.size();i++) {
 		  Product thisProduct = this.get(i);
 		  
-		  for(int j = i + 1; j > this.size();j++) {
+		  for(int j = i + 1; j < this.size();j++) {
 			  Product nextProduct = this.get(j);
 		  
 			  if(thisProduct.getProductNum().equalsIgnoreCase(nextProduct.getProductNum())) {
@@ -58,35 +59,6 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
   }
    
 } 
-
-
-
-
-//  public String getDetails() {
-//	  sortList();
-//	  return super.getDetails();
-//  }
-  
-
- 
-  //  public void sortList() {
-//	  
-//	  Collections.sort(this, new Comparator<Product>(){
-//		  
-//		  public int compare(Product pr1, Product pr2) {
-//			  return pr1.getProductNum().compareToIgnoreCase(pr2.getProductNum());
-//		  }
-//	  });
-//  }
-  
-
-
-//  public int compareTo(Product o) { 
-//
-//	  Product thisProduct = this.getProduct(); 
-//      return thisProduct.getProductNum().compareToIgnoreCase(o.getProductNum());
-//
-//  }
 
   // You need to add code here
   // merge the items for same product,

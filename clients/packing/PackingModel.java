@@ -2,6 +2,7 @@ package clients.packing;
 
 
 import catalogue.Basket;
+import catalogue.BetterBasket;
 import debug.DEBUG;
 import middle.MiddleFactory;
 import middle.OrderException;
