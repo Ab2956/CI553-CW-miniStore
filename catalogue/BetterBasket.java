@@ -37,8 +37,31 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 	
 	return  this.stream().map(product -> product.getPrice() * product.getQuantity()).count();
   	}
+  
+  public void mergePro() {
+	  
+	  for(int i = 0; i < this.size();i++) {
+		  Product thisProduct = this.get(i);
+		  
+		  for(int j = i + 1; j > this.size();j++) {
+			  Product nextProduct = this.get(j);
+		  
+			  if(thisProduct.getProductNum().equalsIgnoreCase(nextProduct.getProductNum())) {
+				  thisProduct.setQuantity(thisProduct.getQuantity() + nextProduct.getQuantity());
+				  
+				  this.remove(j);
+			  }
+			  
+		  }
+		  
+	  }
+  }
    
 } 
+
+
+
+
 //  public String getDetails() {
 //	  sortList();
 //	  return super.getDetails();
