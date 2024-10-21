@@ -25,7 +25,8 @@ public class Basket extends ArrayList<Product> implements Serializable
   public Basket()
   {
     theOrderNum  = 0;
-  }
+      
+    }
   
   /**
    * Set the customers unique order number

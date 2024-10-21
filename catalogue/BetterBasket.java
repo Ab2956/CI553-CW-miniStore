@@ -15,6 +15,7 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 {
   private static final long serialVersionUID = 1L;
 
+ 
   public BetterBasket() { 
 	  super();
 	  sortList();
@@ -36,11 +37,6 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 	
 	return  this.stream().map(product -> product.getPrice() * product.getQuantity()).count();
   	}
-  public boolean add(Product product) {
-      boolean added = super.add(product);  // Call the super method to add the product
-      sortList();  // Sort the basket after adding a new product
-      return added;  // Return the result of the addition
-  }
    
 } 
 //  public String getDetails() {
