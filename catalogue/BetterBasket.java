@@ -45,8 +45,7 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 //  }
   
 
-  
-  
+ 
   //  public void sortList() {
 //	  
 //	  Collections.sort(this, new Comparator<Product>(){
@@ -57,8 +56,6 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 //	  });
 //  }
   
-  
-
 
 
 //  public int compareTo(Product o) { 
@@ -67,11 +64,6 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
 //      return thisProduct.getProductNum().compareToIgnoreCase(o.getProductNum());
 //
 //  }
-
- 
-
-  
-  
 
   // You need to add code here
   // merge the items for same product,
