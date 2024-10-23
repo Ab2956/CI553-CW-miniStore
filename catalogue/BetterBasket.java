@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
 
+import debug.DEBUG;
+
 
 /**
  * Write a description of class BetterBasket here.
@@ -18,19 +20,20 @@ public class BetterBasket extends Basket implements Serializable, Comparable<Bet
   
   
   public BetterBasket() { 
-	  super();
+	  DEBUG.trace("sortList: ");
 	  sortList();
 	 
   } 
   
   public String getDetails() {
+	  DEBUG.trace("GetDetails: mergePro: items merged: " + getDetails());
 	  mergePro();
 	  System.out.print("merged");
-	  return super.getDetails();
+	  return getDetails();
   }
  
   public void sortList() {
-	    Collections.sort(this, Comparator.comparing(Product::getProductNum, String::compareToIgnoreCase));
+	    Collections.sort(this, Comparator.comparing(Product::getProductNum));
 	}
 
   @Override
