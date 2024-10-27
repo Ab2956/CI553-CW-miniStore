@@ -2,7 +2,7 @@ package catalogue;
 
 import java.io.Serializable;
 import java.util.Collections;
-import java.util.Comparator;
+
 
 import debug.DEBUG;
 
@@ -14,63 +14,31 @@ import debug.DEBUG;
  * @version 1.0
  */
 
-public class BetterBasket extends Basket implements Serializable, Comparable<BetterBasket>
+public class BetterBasket extends Basket 
 {
-  private static final long serialVersionUID = 1L;
-  
-  
-  public BetterBasket() { 
-	  DEBUG.trace("sortList: ");
-	  sortList();
-	 
-  } 
-  
-  public String getDetails() {
-	  DEBUG.trace("GetDetails: mergePro: items merged: " + getDetails());
-	  mergePro();
-	  System.out.print("merged");
-	  return getDetails();
-  }
- 
-  public void sortList() {
-	    Collections.sort(this, Comparator.comparing(Product::getProductNum));
-	}
-
-  @Override
-  public int compareTo(BetterBasket o) {
-	  double thisTotalPrice = this.getTotalPrice();
-	  double comTotalPrice = o.getTotalPrice();
-	  
-	  return Double.compare(thisTotalPrice, comTotalPrice);
-  		}
-
-  public double getTotalPrice() {
-	
-	return  this.stream().map(product -> product.getPrice() * product.getQuantity()).count();
-  	}
-  
-  public void mergePro() {
-	  
-	  for(int i = 0; i < this.size();i++) {
-		  Product thisProduct = this.get(i);
-		  
-		  for(int j = i + 1; j < this.size();j++) {
-			  Product nextProduct = this.get(j);
-		  
-			  if(thisProduct.getProductNum().equalsIgnoreCase(nextProduct.getProductNum())) {
-				  thisProduct.setQuantity(thisProduct.getQuantity() + nextProduct.getQuantity());
-				  
-				  this.remove(j);
-			  }
+	@Override
+	public boolean add(Product pr) {
+	  																// create add method to override from Basket add method.
+		DEBUG.trace("add method called: " + pr.getProductNum());	 	// debug trace to see if add method is called with the productNumber.
+		for(Product prList: this) {
+			if(prList.getProductNum().equals(pr.getProductNum())) {
+			  int quant = pr.getQuantity() + prList.getQuantity();
+			  prList.setQuantity(quant);
+			  return(true);
 			  
 		  }
-		  
 	  }
+	  super.add(pr); 
+	  Collections.sort(this);
+	  return(true);
+	 
+	  
   }
+	
+	 
+ } 
    
-} 
 
-  // You need to add code here
-  // merge the items for same product,
-  // or sort the item based on the product number
+
+ 
 
