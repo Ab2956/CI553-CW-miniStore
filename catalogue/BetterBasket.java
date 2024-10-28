@@ -19,7 +19,7 @@ public class BetterBasket extends Basket
 	@Override
 	public boolean add(Product pr) {
 	  																// create add method to override from Basket add method.
-		DEBUG.trace("add method called: " + pr.getProductNum());	 	// debug trace to see if add method is called with the productNumber.
+		DEBUG.trace("add method called: " + pr.getProductNum());	// debug trace to see if add method is called with the productNumber.
 		for(Product prList: this) {
 			if(prList.getProductNum().equals(pr.getProductNum())) {
 			  int quant = pr.getQuantity() + prList.getQuantity();
