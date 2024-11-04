@@ -34,7 +34,7 @@ public class CustomerView implements Observer
   private final JScrollPane theSP      = new JScrollPane();
   private final JButton     theBtCheck = new JButton( Name.CHECK );
   private final JButton     theBtClear = new JButton( Name.CLEAR );
- //private final JButton     theBtCheckName = new JButton(Name.CHECKNAME);
+  private final JButton     theBtCheckName = new JButton(Name.CHECKNAME);
 
   private Picture thePicture = new Picture(80,80);
   private StockReader theStock   = null;
@@ -74,10 +74,10 @@ public class CustomerView implements Observer
       e -> cont.doCheck( theInput.getText() ) );
     cp.add( theBtCheck );                           //  Add to canvas
 
-//    theBtCheckName.setBounds(16, 25+60*1, 80, 40);  // CheckName Button
-//    theBtCheckName.addActionListener(				// Call back code
-//    		e -> cont.doCheck (theInput.getText()) );
-//    cp.add(theBtCheckName);							// add to canvas
+    theBtCheckName.setBounds(16, 25+60*1, 80, 40);  // CheckName Button
+    theBtCheckName.addActionListener(				// Call back code
+    		e -> cont.doCheck (theInput.getText()) );
+    cp.add(theBtCheckName);							// add to canvas
     
     theBtClear.setBounds( 16, 25+60*1, 80, 40 );    // Clear button
     theBtClear.addActionListener(                   // Call back code
