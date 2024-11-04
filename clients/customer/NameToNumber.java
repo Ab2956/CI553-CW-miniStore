@@ -1,5 +1,7 @@
 package clients.customer;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class NameToNumber extends HashMap<String, String>{
 	
@@ -12,5 +14,14 @@ public class NameToNumber extends HashMap<String, String>{
 		put("0005","Camera");
 		put("0006","Music player");
 		put("0007","USB driver");
+	}
+	
+	public <T, E> T getNumberByName(Map<T, E>map, E value) {
+		for(Entry<T, E> entry: map.entrySet()) {
+			if(Objects.equals(value, entry.getValue())) {
+				return entry.getKey();
+			}
+		}
+		return null;
 	}
 }
