@@ -17,6 +17,7 @@ public class BackDoorView implements Observer
   private static final String RESTOCK  = "Add";
   private static final String CLEAR    = "Clear";
   private static final String QUERY    = "Query";
+  private static final String SEARCH   = "Search";
  
   private static final int H = 300;       // Height of window pixels
   private static final int W = 400;       // Width  of window pixels
@@ -30,6 +31,7 @@ public class BackDoorView implements Observer
   private final JButton     theBtClear = new JButton( CLEAR );
   private final JButton     theBtRStock = new JButton( RESTOCK );
   private final JButton     theBtQuery = new JButton( QUERY );
+  private final JButton 	theBtSearch = new JButton(SEARCH);
   
   private StockReadWriter theStock     = null;
   private BackDoorController cont= null;
@@ -67,13 +69,17 @@ public class BackDoorView implements Observer
       e -> cont.doQuery( theInput.getText() ) );
     cp.add( theBtQuery );                           //  Add to canvas
 
-    theBtRStock.setBounds( 16, 25+60*1, 80, 40 );   // Check Button
+    theBtSearch.setBounds(16, 25+60*1, 80, 40);		// Search button
+    // code for search 
+    cp.add(theBtSearch);							// Add to canvas
+    
+    theBtRStock.setBounds( 16, 25+60*2, 80, 40 );   // Check Button
     theBtRStock.addActionListener(                  // Call back code
       e -> cont.doRStock( theInput.getText(),
                           theInputNo.getText() ) );
     cp.add( theBtRStock );                          //  Add to canvas
 
-    theBtClear.setBounds( 16, 25+60*2, 80, 40 );    // Buy button 
+    theBtClear.setBounds( 16, 25+60*3, 80, 40 );    // Buy button 
     theBtClear.addActionListener(                   // Call back code
       e -> cont.doClear() );
     cp.add( theBtClear );                           //  Add to canvas
