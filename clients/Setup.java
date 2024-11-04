@@ -69,7 +69,7 @@ class Setup
     Connection theCon    = null;      // Connection to database
     DBAccess   dbDriver  = null;
     DBAccessFactory.setAction("Create");
-    System.out.println("Setup CatShop database of stock items");
+    System.out.println("Setup Shop database of stock items");
     try
     {
       dbDriver = (new DBAccessFactory()).getNewDBAccess();

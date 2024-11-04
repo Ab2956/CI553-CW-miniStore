@@ -28,8 +28,8 @@ public class BetterBasket extends Basket
 			  
 		  }
 	  }
-	  super.add(pr); 
-	  Collections.sort(this);
+	  super.add(pr); 												// add met
+	  Collections.sort(this);										// Collections called to sort the basket by the product number
 	  return(true);
 	 
 	  
