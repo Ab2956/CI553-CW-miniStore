@@ -55,6 +55,7 @@ public class BackDoorModel extends Observable
   {
     pn  = productNum.trim();                    // Product no.
   }
+  
 
   /**
    * Query 

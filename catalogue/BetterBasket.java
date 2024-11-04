@@ -28,7 +28,7 @@ public class BetterBasket extends Basket
 			  
 		  }
 	  }
-	  super.add(pr); 												// add met
+	  super.add(pr); 												// add method 
 	  Collections.sort(this);										// Collections called to sort the basket by the product number
 	  return(true);
 	 
@@ -38,7 +38,5 @@ public class BetterBasket extends Basket
 	 
  } 
    
-
-
  
 

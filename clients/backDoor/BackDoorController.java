@@ -19,6 +19,11 @@ public class BackDoorController
     this.view  = view;
     this.model = model;
   }
+  
+  public void doCheckName(String name) {
+	  // add code
+	  // add name to number class in package.
+  }
 
   /**
    * Query interaction from view
