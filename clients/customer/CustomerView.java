@@ -76,10 +76,10 @@ public class CustomerView implements Observer
 
     theBtCheckName.setBounds(16, 25+60*1, 80, 40);  // CheckName Button
     theBtCheckName.addActionListener(				// Call back code
-    		e -> cont.doCheck (theInput.getText()) );
+    		e -> cont.doCheckByName (theInput.getText()) );
     cp.add(theBtCheckName);							// add to canvas
     
-    theBtClear.setBounds( 16, 25+60*1, 80, 40 );    // Clear button
+    theBtClear.setBounds( 16, 25+60*2, 80, 40 );    // Clear button
     theBtClear.addActionListener(                   // Call back code
       e -> cont.doClear() );
     cp.add( theBtClear );                           //  Add to canvas
@@ -98,7 +98,7 @@ public class CustomerView implements Observer
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
 
-    thePicture.setBounds( 16, 25+60*2, 80, 80 );   // Picture area
+    thePicture.setBounds( 16, 25+60*3, 80, 80 );   // Picture area
     cp.add( thePicture );                           //  Add to canvas
     thePicture.clear();
     
