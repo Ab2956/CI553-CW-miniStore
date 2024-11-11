@@ -30,6 +30,7 @@ public class CustomerView implements Observer
   private final JLabel      pageTitle  = new JLabel();
   private final JLabel      theAction  = new JLabel();
   private final JTextField  theInput   = new JTextField();
+  private final JTextField  buyMany   = new JTextField();
   private final JTextArea   theOutput  = new JTextArea();
   private final JScrollPane theSP      = new JScrollPane();
   private final JButton     theBtCheck = new JButton( Name.CHECK );
@@ -88,6 +89,10 @@ public class CustomerView implements Observer
     theAction.setText( " " );                       // blank
     cp.add( theAction );                            //  Add to canvas
 
+    buyMany.setBounds( 110, 50, 270, 40 );         // Product no area
+    buyMany.setText("1");                           // Blank
+    cp.add( buyMany );                             //  Add to canvas
+    
     theInput.setBounds( 110, 50, 270, 40 );         // Product no area
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
