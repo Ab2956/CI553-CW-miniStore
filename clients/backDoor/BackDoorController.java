@@ -1,5 +1,6 @@
 package clients.backDoor;
 
+import clients.customer.NameToNumber;
 
 /**
  * The BackDoor Controller
@@ -20,9 +21,13 @@ public class BackDoorController
     this.model = model;
   }
   
-  public void doCheckName(String name) {
-	  // add code
-	  // add name to number class in package.
+ 
+  
+  public void doQueryByName(String name) {							// search the product by name
+	  
+	  NameToNumber nameToNumber = new NameToNumber();
+	  String pn = nameToNumber.getNumberByName(nameToNumber, name);
+	  model.doQuery(pn);											// call do query 
   }
 
   /**

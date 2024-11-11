@@ -70,7 +70,8 @@ public class BackDoorView implements Observer
     cp.add( theBtQuery );                           //  Add to canvas
 
     theBtSearch.setBounds(16, 25+60*1, 80, 40);		// Search button
-    // code for search 
+    theBtSearch.addActionListener(					
+    	e -> cont.doQueryByName (theInput.getText()) ); 
     cp.add(theBtSearch);							// Add to canvas
     
     theBtRStock.setBounds( 16, 25+60*2, 80, 40 );   // Check Button

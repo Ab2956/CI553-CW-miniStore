@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class NameToNumber extends HashMap<String, String>{
 	
-	NameToNumber(){
+	public NameToNumber(){		// Public so other packages can use the function
 		
 		put("0001","TV");
 		put("0002","Radio");
