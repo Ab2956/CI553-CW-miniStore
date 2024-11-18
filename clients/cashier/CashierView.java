@@ -3,6 +3,7 @@ package clients.cashier;
 import catalogue.Basket;
 import middle.MiddleFactory;
 import middle.OrderProcessing;
+import middle.StockException;
 import middle.StockReadWriter;
 
 import javax.swing.*;
@@ -81,7 +82,13 @@ public class CashierView implements Observer
     
     theBtClear.setBounds(16, 25+60*2, 80, 40);
     theBtClear.addActionListener(
-    		e -> cont.doClear());
+    		e -> {
+				try {
+					cont.doClear();
+				} catch (StockException e1) {
+					e1.printStackTrace();
+				}
+			});
     cp.add(theBtClear);
 
     theBtBought.setBounds( 16, 25+60*3, 80, 40 );   // Bought Button

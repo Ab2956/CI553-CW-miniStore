@@ -1,5 +1,6 @@
 package clients.cashier;
 
+import middle.StockException;
 
 /**
  * The Cashier Controller
@@ -38,7 +39,7 @@ public class CashierController
     model.doBuy();
   }
   
-  public void doClear() {
+  public void doClear() throws StockException {
 	  
 	  model.doClear();
   }
