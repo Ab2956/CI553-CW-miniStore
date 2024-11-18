@@ -157,15 +157,15 @@ public class CashierModel extends Observable
     setChanged(); notifyObservers(theAction); // Notify
   }
   
-  public void doClear() {
+  public void doClear() {							// doClear method to clear basket 
 	  String theAction = "";
+	  
 	  if(theBasket != null && !theBasket.isEmpty()) {
 		  for(Product p : theBasket) {
-			  
+			 theBasket.getQuantityBasket();
 		  }
 		  theBasket.clear();
 	  }
-	  
 	  theBasket = null;
 	  setChanged(); notifyObservers(theAction);
 	  

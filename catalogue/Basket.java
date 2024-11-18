@@ -30,6 +30,9 @@ public class Basket extends ArrayList<Product> implements Serializable
     theOrderNum  = 0;
       
     }
+  public void getQuantityBasket() {
+	  
+  }
   
   /**
    * Set the customers unique order number
