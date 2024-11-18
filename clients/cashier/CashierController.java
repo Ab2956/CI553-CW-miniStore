@@ -39,6 +39,8 @@ public class CashierController
     model.doBuy();
   }
   
+  // Clear interaction from view
+  
   public void doClear() throws StockException {
 	  
 	  model.doClear();

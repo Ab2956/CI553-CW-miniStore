@@ -160,22 +160,22 @@ public class CashierModel extends Observable
   public void doClear() throws StockException {							// doClear method to clear basket 
 	  String theAction = "";
 	  try {
-	  if(theBasket != null && !theBasket.isEmpty()) {
-		  for(Product p : theBasket) {
-			 int currentBasketQuantity = theBasket.getQuantityBasket(p);
-			  theBasket.setQuantityBasket(p, currentBasketQuantity +1);
+	  if(theBasket != null && !theBasket.isEmpty()) {						// if statement to see if the basket is empty
+		  for(Product p : theBasket) {										// enhanced for loop to iterate through the basket
+			 int currentBasketQuantity = theBasket.getQuantityBasket(p);	// let currentBasketQuatity equals getQuantityBasket
+			  theBasket.setQuantityBasket(p, currentBasketQuantity +1);		// add 1 every time a product is counted 
 			 
 		  }
-		  theStock.addStock(theProduct.getProductNum(), theBasket.getQuantityBasket(theProduct));
-		  theBasket.clear();
+		  theStock.addStock(theProduct.getProductNum(), theBasket.getQuantityBasket(theProduct)); // add Stock back to its original count
+		  theBasket.clear();																	  // clear basket
 	  }
 	  }catch( StockException e ){
 		  DEBUG.error("%s\n%s", 
             "CashierModel.doClear", e.getMessage() );
       theAction = e.getMessage();
 	  }
-	  theBasket = null;
-	  setChanged(); notifyObservers(theAction);
+	  theBasket = null;												// let basket equal null 
+	  setChanged(); notifyObservers(theAction);						// call setChanged and notifyObservers
 	  
   }
 
