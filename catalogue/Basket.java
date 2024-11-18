@@ -32,7 +32,7 @@ public class Basket extends ArrayList<Product> implements Serializable
       
     }
   
-  public void setQuantityBasket(int quantityBasket) {
+  public void setQuantityBasket(Product p, int quantityBasket) {
 	  theQuantityBasket = quantityBasket;
   }
   public int getQuantityBasket(Product theProduct) {

@@ -162,7 +162,9 @@ public class CashierModel extends Observable
 	  try {
 	  if(theBasket != null && !theBasket.isEmpty()) {
 		  for(Product p : theBasket) {
-			 theBasket.getQuantityBasket(p);
+			 int currentBasketQuantity = theBasket.getQuantityBasket(p);
+			  theBasket.setQuantityBasket(p, currentBasketQuantity +1);
+			 
 		  }
 		  theStock.addStock(theProduct.getProductNum(), theBasket.getQuantityBasket(theProduct));
 		  theBasket.clear();
