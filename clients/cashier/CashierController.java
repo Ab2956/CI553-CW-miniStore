@@ -38,6 +38,11 @@ public class CashierController
     model.doBuy();
   }
   
+  public void doClear() {
+	  
+	  model.doClear();
+  }
+  
    /**
    * Bought interaction from view
    */

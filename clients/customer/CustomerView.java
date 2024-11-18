@@ -22,6 +22,7 @@ public class CustomerView implements Observer
     public static final String CHECK  = "Check";
     public static final String CLEAR  = "Clear";
     public static final String CHECKNAME = "Search";
+    
   }
 
   private static final int H = 300;       // Height of window pixels

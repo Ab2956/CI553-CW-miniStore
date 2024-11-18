@@ -156,9 +156,23 @@ public class CashierModel extends Observable
     theBasket = null;
     setChanged(); notifyObservers(theAction); // Notify
   }
+  
+  public void doClear() {
+	  String theAction = "";
+	  if(theBasket != null && !theBasket.isEmpty()) {
+		  for(Product p : theBasket) {
+			  
+		  }
+		  theBasket.clear();
+	  }
+	  
+	  theBasket = null;
+	  setChanged(); notifyObservers(theAction);
+	  
+  }
 
   /**
-   * ask for update of view callled at start of day
+   * ask for update of view called at start of day
    * or after system reset
    */
   public void askForUpdate()
