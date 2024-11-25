@@ -57,48 +57,69 @@ public class BackDoorView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    cp.setBackground(Color.DARK_GRAY);
     
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
-    pageTitle.setBounds( 110, 0 , 270, 20 );       
+    pageTitle.setBounds( 110, 0 , 270, 20 );
+    pageTitle.setForeground(Color.WHITE);
     pageTitle.setText( "Staff check and manage stock" );                        
     cp.add( pageTitle );
     
     theBtQuery.setBounds( 16, 25+60*0, 80, 40 );    // Buy button 
+    theBtQuery.setBackground(Color.GRAY);
+    theBtQuery.setForeground(Color.WHITE);
     theBtQuery.addActionListener(                   // Call back code
       e -> cont.doQuery( theInput.getText() ) );
     cp.add( theBtQuery );                           //  Add to canvas
 
     theBtSearch.setBounds(16, 25+60*1, 80, 40);		// Search button
+    theBtSearch.setBackground(Color.GRAY);
+    theBtSearch.setForeground(Color.WHITE);
     theBtSearch.addActionListener(					
     	e -> cont.doQueryByName (theInput.getText()) ); 
     cp.add(theBtSearch);							// Add to canvas
     
     theBtRStock.setBounds( 16, 25+60*2, 80, 40 );   // Check Button
+    theBtRStock.setBackground(Color.GRAY);
+    theBtRStock.setForeground(Color.WHITE);
     theBtRStock.addActionListener(                  // Call back code
       e -> cont.doRStock( theInput.getText(),
                           theInputNo.getText() ) );
     cp.add( theBtRStock );                          //  Add to canvas
 
     theBtClear.setBounds( 16, 25+60*3, 80, 40 );    // Buy button 
+    theBtClear.setBackground(Color.GRAY);
+    theBtClear.setForeground(Color.WHITE);
     theBtClear.addActionListener(                   // Call back code
       e -> cont.doClear() );
     cp.add( theBtClear );                           //  Add to canvas
 
  
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
+    theAction.setBackground(Color.DARK_GRAY);    
+    theAction.setForeground(Color.WHITE);
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 
     theInput.setBounds( 110, 50, 120, 40 );         // Input Area
+    theInput.setBackground(Color.DARK_GRAY);    
+    theInput.setForeground(Color.WHITE);      
+    theInput.setCaretColor(Color.WHITE);
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
     
     theInputNo.setBounds( 260, 50, 120, 40 );       // Input Area
+    theInputNo.setBackground(Color.DARK_GRAY);    
+    theInputNo.setForeground(Color.WHITE);      
+    theInputNo.setCaretColor(Color.WHITE);
     theInputNo.setText("0");                        // 0
     cp.add( theInputNo );                           //  Add to canvas
 
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
+    theOutput.setBackground(Color.DARK_GRAY);    
+    theOutput.setForeground(Color.WHITE);      
+    theOutput.setCaretColor(Color.WHITE);
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font  
     cp.add( theSP );                                //  Add to canvas

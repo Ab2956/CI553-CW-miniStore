@@ -63,24 +63,33 @@ public class CashierView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    cp.setBackground(Color.DARK_GRAY);
 
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
 
     pageTitle.setBounds( 110, 0 , 270, 20 );       
+    pageTitle.setForeground(Color.WHITE);
     pageTitle.setText( "Thank You for Shopping at MiniStrore" );                        
     cp.add( pageTitle );  
     
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check Button
+    theBtCheck.setBackground(Color.GRAY);
+    theBtCheck.setForeground(Color.WHITE);
     theBtCheck.addActionListener(                   // Call back code
       e -> cont.doCheck( theInput.getText(), Integer.parseInt(buyMany.getText()) ));
     cp.add( theBtCheck );                           //  Add to canvas
+    
 
     theBtBuy.setBounds( 16, 25+60*1, 80, 40 );      // Buy button 
+    theBtBuy.setBackground(Color.GRAY);
+    theBtBuy.setForeground(Color.WHITE);
     theBtBuy.addActionListener(                     // Call back code
       e -> cont.doBuy() );
     cp.add( theBtBuy );                             //  Add to canvas
     
     theBtClear.setBounds(16, 25+60*2, 80, 40);		// Clear Button
+    theBtClear.setBackground(Color.GRAY);
+    theBtClear.setForeground(Color.WHITE);
     theBtClear.addActionListener(					// call back code
     		e -> {
 				try {
@@ -92,24 +101,37 @@ public class CashierView implements Observer
     cp.add(theBtClear);								// add to canvas
 
     theBtBought.setBounds( 16, 25+60*3, 80, 40 );   // Bought Button
+    theBtBought.setBackground(Color.GRAY);
+    theBtBought.setForeground(Color.WHITE);
     theBtBought.addActionListener(                  // Call back code
       e -> cont.doBought() );
     cp.add( theBtBought );                          //  Add to canvas
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
+    theAction.setBackground(Color.DARK_GRAY);    // Set the background color
+    theAction.setForeground(Color.WHITE);
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 
     buyMany.setBounds( 300, 50, 80, 40 );         // Product no area
+    buyMany.setBackground(Color.DARK_GRAY);
+    buyMany.setForeground(Color.WHITE);
+    buyMany.setCaretColor(Color.WHITE);
     buyMany.setText("1");                           // 1
     cp.add( buyMany );                             //  Add to canvas
     
     theInput.setBounds( 110, 50, 170, 40 );         // Input Area
+    theInput.setBackground(Color.DARK_GRAY);    // Set the background color
+    theInput.setForeground(Color.WHITE);      // Set the text color
+    theInput.setCaretColor(Color.WHITE);
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
 
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
     theOutput.setText( "" );                        //  Blank
+    theOutput.setBackground(Color.DARK_GRAY);    // Set the background color
+    theOutput.setForeground(Color.WHITE);      // Set the text color
+    theOutput.setCaretColor(Color.WHITE);
     theOutput.setFont( f );                         //  Uses font  
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea

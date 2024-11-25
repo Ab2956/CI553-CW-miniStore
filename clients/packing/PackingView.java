@@ -53,23 +53,31 @@ public class PackingView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
+    cp.setBackground(Color.DARK_GRAY);
     
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
     
-    pageTitle.setBounds( 110, 0 , 270, 20 );       
+    pageTitle.setBounds( 110, 0 , 270, 20 );    
+    pageTitle.setForeground(Color.WHITE);
     pageTitle.setText( "Packing Bought Order" );                        
     cp.add( pageTitle );
 
     theBtPack.setBounds( 16, 25+60*0, 80, 40 );   // Check Button
+    theBtPack.setBackground(Color.GRAY);
+    theBtPack.setForeground(Color.WHITE);
     theBtPack.addActionListener(                   // Call back code
       e -> cont.doPacked() );
     cp.add( theBtPack );                          //  Add to canvas
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
+    theAction.setBackground(Color.DARK_GRAY);    
+    theAction.setForeground(Color.WHITE); 
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 
     theSP.setBounds( 110, 55, 270, 205 );           // Scrolling pane
+    theOutput.setBackground(Color.DARK_GRAY);
+    theOutput.setForeground(Color.WHITE);
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font  
     cp.add( theSP );                                //  Add to canvas
