@@ -19,7 +19,7 @@ public class BackDoorView implements Observer
   private static final String QUERY    = "Query";
   private static final String SEARCH   = "Search";
  
-  private static final int H = 300;       // Height of window pixels
+  private static final int H = 350;       // Height of window pixels
   private static final int W = 400;       // Width  of window pixels
 
   private final JLabel      pageTitle  = new JLabel();
