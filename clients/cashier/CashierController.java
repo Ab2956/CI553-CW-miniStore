@@ -1,5 +1,6 @@
 package clients.cashier;
 
+import middle.StockException;
 
 /**
  * The Cashier Controller
@@ -25,9 +26,9 @@ public class CashierController
    * Check interaction from view
    * @param pn The product number to be checked
    */
-  public void doCheck( String pn )
+  public void doCheck( String pn, int buyMany)
   {
-    model.doCheck(pn);
+    model.doCheck(pn, buyMany);
   }
 
    /**
@@ -36,6 +37,13 @@ public class CashierController
   public void doBuy()
   {
     model.doBuy();
+  }
+  
+  // Clear interaction from view
+  
+  public void doClear() throws StockException {
+	  
+	  model.doClear();
   }
   
    /**

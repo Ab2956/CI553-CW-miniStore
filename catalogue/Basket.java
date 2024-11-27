@@ -17,14 +17,26 @@ public class Basket extends ArrayList<Product> implements Serializable
 {
   private static final long serialVersionUID = 1;
   private int    theOrderNum = 0;          // Order number
+  private int	theQuantityBasket = 0;
   
   /**
    * Constructor for a basket which is
    *  used to represent a customer order/ wish list
    */
+ 
+
+  	
   public Basket()
   {
     theOrderNum  = 0;
+      
+    }
+  
+  public void setQuantityBasket(Product p, int quantityBasket) {
+	  theQuantityBasket = quantityBasket;
+  }
+  public int getQuantityBasket(Product theProduct) {
+	  return theQuantityBasket;
   }
   
   /**
@@ -94,3 +106,4 @@ public class Basket extends ArrayList<Product> implements Serializable
     return sb.toString();
   }
 }
+

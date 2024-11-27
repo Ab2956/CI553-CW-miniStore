@@ -3,18 +3,40 @@ package catalogue;
 import java.io.Serializable;
 import java.util.Collections;
 
+
+import debug.DEBUG;
+
+
 /**
  * Write a description of class BetterBasket here.
  * 
- * @author  Your Name 
+ * @author  Adam Brows 
  * @version 1.0
  */
-public class BetterBasket extends Basket implements Serializable
-{
-  private static final long serialVersionUID = 1L;
-  
 
-  // You need to add code here
-  // merge the items for same product,
-  // or sort the item based on the product number
-}
+public class BetterBasket extends Basket 
+{
+	@Override
+	public boolean add(Product pr) {
+	  																// create add method to override from Basket add method.
+		DEBUG.trace("add method called: " + pr.getProductNum());	// debug trace to see if add method is called with the productNumber.
+		for(Product prList: this) {
+			if(prList.getProductNum().equals(pr.getProductNum())) {
+			  int quant = pr.getQuantity() + prList.getQuantity();
+			  prList.setQuantity(quant);
+			  return(true);
+			  
+		  }
+	  }
+	  super.add(pr); 												// add method 
+	  Collections.sort(this);										// Collections called to sort the basket by the product number
+	  return(true);
+	 
+	  
+  }
+	
+	 
+ } 
+   
+ 
+
