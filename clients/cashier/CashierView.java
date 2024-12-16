@@ -73,10 +73,10 @@ public class CashierView implements Observer
     cp.add( pageTitle );  
     
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check Button
-    theBtCheck.setBackground(Color.GRAY);
-    theBtCheck.setForeground(Color.WHITE);
+    theBtCheck.setBackground(Color.GRAY);			// Set background colour
+    theBtCheck.setForeground(Color.WHITE);			// Set foreground colour
     theBtCheck.addActionListener(                   // Call back code
-      e -> cont.doCheck( theInput.getText(), Integer.parseInt(buyMany.getText()) ));
+      e -> cont.doCheck( theInput.getText(), Integer.parseInt(buyMany.getText()) )); // doCheck with param for input
     cp.add( theBtCheck );                           //  Add to canvas
     
 
@@ -88,11 +88,11 @@ public class CashierView implements Observer
     cp.add( theBtBuy );                             //  Add to canvas
     
     theBtClear.setBounds(16, 25+60*2, 80, 40);		// Clear Button
-    theBtClear.setBackground(Color.GRAY);
-    theBtClear.setForeground(Color.WHITE);
+    theBtClear.setBackground(Color.GRAY);			// Set background colour
+    theBtClear.setForeground(Color.WHITE);			// Set foreground colour
     theBtClear.addActionListener(					// call back code
     		e -> {
-				try {
+				try {								// try-catch statement for exception
 					cont.doClear();					
 				} catch (StockException e1) {
 					e1.printStackTrace();
@@ -108,29 +108,29 @@ public class CashierView implements Observer
     cp.add( theBtBought );                          //  Add to canvas
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
-    theAction.setBackground(Color.DARK_GRAY);    // Set the background color
+    theAction.setBackground(Color.DARK_GRAY);    	// Set background colour
     theAction.setForeground(Color.WHITE);
     theAction.setText( "" );                        // Blank
     cp.add( theAction );                            //  Add to canvas
 
-    buyMany.setBounds( 300, 50, 80, 40 );         // Product no area
-    buyMany.setBackground(Color.DARK_GRAY);
-    buyMany.setForeground(Color.WHITE);
+    buyMany.setBounds( 300, 50, 80, 40 );         	// Product no area
+    buyMany.setBackground(Color.DARK_GRAY);			// Set the background colour
+    buyMany.setForeground(Color.WHITE); 			// Set the foreground colour
     buyMany.setCaretColor(Color.WHITE);
     buyMany.setText("1");                           // 1
-    cp.add( buyMany );                             //  Add to canvas
+    cp.add( buyMany );                             	//  Add to canvas
     
     theInput.setBounds( 110, 50, 170, 40 );         // Input Area
-    theInput.setBackground(Color.DARK_GRAY);    // Set the background color
-    theInput.setForeground(Color.WHITE);      // Set the text color
+    theInput.setBackground(Color.DARK_GRAY);   		// Set the background colour
+    theInput.setForeground(Color.WHITE);     		// Set the text colour
     theInput.setCaretColor(Color.WHITE);
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
 
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
     theOutput.setText( "" );                        //  Blank
-    theOutput.setBackground(Color.DARK_GRAY);    // Set the background color
-    theOutput.setForeground(Color.WHITE);      // Set the text color
+    theOutput.setBackground(Color.DARK_GRAY);    // Set the background colour
+    theOutput.setForeground(Color.WHITE);      // Set the text colour
     theOutput.setCaretColor(Color.WHITE);
     theOutput.setFont( f );                         //  Uses font  
     cp.add( theSP );                                //  Add to canvas

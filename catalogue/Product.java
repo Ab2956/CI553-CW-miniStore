@@ -60,7 +60,7 @@ public class Product implements Comparable<Product>
   
   
 @Override
-public int compareTo(Product p1) {		// comparable for the BetterBasket for sorting.
+public int compareTo(Product p1) {		// comparable for the BetterBasket for sorting
 	return this.getProductNum().compareTo(p1.getProductNum());
 }
 

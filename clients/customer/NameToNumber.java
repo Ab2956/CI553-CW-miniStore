@@ -17,11 +17,15 @@ public class NameToNumber extends HashMap<String, String>{
 	}
 	
 	public <T, E> T getNumberByName(Map<T, E>map, E value) {
-		for(Entry<T, E> entry: map.entrySet()) {
-			if(Objects.equals(value, entry.getValue())) {
+		for(Entry<T, E> entry: map.entrySet()) {			// for loop to loop through the map
+			if(Objects.equals(value, entry.getValue())) { 	// if statement to return the key
 				return entry.getKey();
 			}
 		}
-		return null;
+		return null;		// return null
 	}
 }
+
+
+
+

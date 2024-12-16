@@ -63,7 +63,7 @@ public class CustomerView implements Observer
     cp.setLayout(null);                             // No layout manager
     rootWindow.setSize( W, H );                     // Size of Window
     rootWindow.setLocation( x, y );
-    cp.setBackground(Color.DARK_GRAY);
+    cp.setBackground(Color.DARK_GRAY);				// Set background colour
 
     Font f = new Font("Monospaced",Font.PLAIN,12);  // Font f is
     
@@ -73,55 +73,55 @@ public class CustomerView implements Observer
     cp.add( pageTitle );
 
     theBtCheck.setBounds( 16, 25+60*0, 80, 40 );    // Check button
-    theBtCheck.setBackground(Color.GRAY);
-    theBtCheck.setForeground(Color.WHITE);
+    theBtCheck.setBackground(Color.GRAY);			// Set background colour
+    theBtCheck.setForeground(Color.WHITE);			// Set foreground colour
     theBtCheck.addActionListener(                   // Call back code
       e -> cont.doCheck( theInput.getText() ) );
     cp.add( theBtCheck );                           //  Add to canvas
 
     theBtCheckName.setBounds(16, 25+60*1, 80, 40);  // CheckName Button
-    theBtCheckName.setBackground(Color.GRAY);
-    theBtCheckName.setForeground(Color.WHITE);
+    theBtCheckName.setBackground(Color.GRAY);		// Set background colour
+    theBtCheckName.setForeground(Color.WHITE);		// Set foreground colour
     theBtCheckName.addActionListener(				// Call back code
     		e -> cont.doCheckByName (theInput.getText()) );
     cp.add(theBtCheckName);							// add to canvas
     
     theBtClear.setBounds( 16, 25+60*2, 80, 40 );    // Clear button
-    theBtClear.setBackground(Color.GRAY);
-    theBtClear.setForeground(Color.WHITE);
+    theBtClear.setBackground(Color.GRAY);			// Set background colour
+    theBtClear.setForeground(Color.WHITE);			// Set foreground colour
     theBtClear.addActionListener(                   // Call back code
       e -> cont.doClear() );
     cp.add( theBtClear );                           //  Add to canvas
 
     theAction.setBounds( 110, 25 , 270, 20 );       // Message area
-    theAction.setBackground(Color.DARK_GRAY);    
-    theAction.setForeground(Color.WHITE);      
+    theAction.setBackground(Color.DARK_GRAY);    	// Set background colour
+    theAction.setForeground(Color.WHITE);      		// Set foreground colour
     theAction.setText( " " );                       // blank
     
     cp.add( theAction );                            //  Add to canvas
     
     theInput.setBounds( 110, 50, 270, 40 );         // Product no area
-    theInput.setBackground(Color.DARK_GRAY);    
-    theInput.setForeground(Color.WHITE);      
+    theInput.setBackground(Color.DARK_GRAY);    	// Set background colour
+    theInput.setForeground(Color.WHITE);      		// Set foreground colour
     theInput.setCaretColor(Color.WHITE);          
     theInput.setText("");                           // Blank
     cp.add( theInput );                             //  Add to canvas
     
     theSP.setBounds( 110, 100, 270, 160 );          // Scrolling pane
-    theOutput.setBackground(Color.DARK_GRAY);    
-    theOutput.setForeground(Color.WHITE);      
+    theOutput.setBackground(Color.DARK_GRAY);    	// Set background colour
+    theOutput.setForeground(Color.WHITE);      		// Set foreground colour
     theOutput.setText( "" );                        //  Blank
     theOutput.setFont( f );                         //  Uses font  
     cp.add( theSP );                                //  Add to canvas
     theSP.getViewport().add( theOutput );           //  In TextArea
 
     thePicture.setBounds( 16, 25+60*3, 80, 80 );   // Picture area
-    thePicture.setBackground(Color.WHITE);
-    thePicture.setForeground(Color.WHITE);
+    thePicture.setBackground(Color.WHITE);			// Set background colour
+    thePicture.setForeground(Color.WHITE);			// Set foreground colour
     cp.add( thePicture );                           //  Add to canvas
     thePicture.clear();
     
-    rootWindow.setVisible( true );                  // Make visible);
+    rootWindow.setVisible( true );                  // Make visible
     theInput.requestFocus();                        // Focus is here
   }
 

@@ -25,7 +25,6 @@ public class BetterBasket extends Basket
 			  int quant = pr.getQuantity() + prList.getQuantity();
 			  prList.setQuantity(quant);
 			  return(true);
-			  
 		  }
 	  }
 	  super.add(pr); 												// add method 

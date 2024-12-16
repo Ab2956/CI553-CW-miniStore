@@ -163,7 +163,7 @@ public class CashierModel extends Observable
 	  if(theBasket != null && !theBasket.isEmpty()) {						// if statement to see if the basket is empty
 		  for(Product p : theBasket) {										// enhanced for loop to iterate through the basket
 			 int currentBasketQuantity = theBasket.getQuantityBasket(p);	// let currentBasketQuatity equals getQuantityBasket
-			  theBasket.setQuantityBasket(p, currentBasketQuantity + p.getQuantity());		// add quantity every time a product is counted 
+			  theBasket.setQuantityBasket(p, currentBasketQuantity + p.getQuantity());  // add quantity every time a product is counted 
 			 
 		  }
 		  theStock.addStock(theProduct.getProductNum(), theBasket.getQuantityBasket(theProduct)); // add Stock back to its original count
@@ -209,8 +209,8 @@ public class CashierModel extends Observable
   }
 
   /**
-   * return an instance of a new Basket
-   * @return an instance of a new Basket
+   * return an instance of a new BetterBasket
+   * @return an instance of a new BetterBasket
    */
   protected BetterBasket makeBasket()
   {
